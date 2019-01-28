@@ -33,6 +33,8 @@ public class RestCalculatorTest {
     public void testCalcAdd() {
         ResultDto resultDto = target.path("rest-calculator/add/1/1/1").request().get(ResultDto.class);
         assertEquals( (Double) 3.0, resultDto.getResult());
+        resultDto = target.path("rest-calculator/add/1/1/1").request().get(ResultDto.class);
+        assertEquals( (Double) 3.0, resultDto.getResult());
     }
 
     @Test

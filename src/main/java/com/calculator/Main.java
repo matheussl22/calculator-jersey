@@ -15,8 +15,8 @@ public class Main {
      * @return Grizzly HTTP server.
      */
     public static HttpServer startServer() {
-        final ResourceConfig rc = new ResourceConfig().packages("com.calculator");
-        return GrizzlyHttpServerFactory.createHttpServer(URI.create(BASE_URI), rc);
+        final ResourceConfig resourceConfig = new ResourceConfig().packages("com.calculator");
+        return GrizzlyHttpServerFactory.createHttpServer(URI.create(BASE_URI), resourceConfig);
     }
 
     /**
@@ -25,11 +25,11 @@ public class Main {
      * @throws IOException
      */
     public static void main(String[] args) throws IOException {
-        final HttpServer server = startServer();
+        final HttpServer httpServer = startServer();
         System.out.println(String.format("Jersey app started with WADL available at "
                 + "%sapplication.wadl\nHit enter to stop it...", BASE_URI));
         System.in.read();
-        server.stop();
+        httpServer.stop();
     }
 }
 

@@ -1,5 +1,7 @@
 package com.calculator;
 
+
+
 public class ResultDto {
 
     private Double result;
